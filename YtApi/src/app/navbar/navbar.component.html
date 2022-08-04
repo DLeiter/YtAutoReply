@@ -1,60 +1,14 @@
-<p>
-    <mat-toolbar>
-      <span>My Application</span>
-    </mat-toolbar>
-  </p>
-  
-  <p>
-    <mat-toolbar>
-     <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
-      <mat-icon>menu</mat-icon>
-    </button>
-    <span>My App</span>
-    <span class="example-spacer"></span>
-    <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
-      <mat-icon>favorite</mat-icon>
-    </button>
-    <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
-     <mat-icon>share</mat-icon>
-   </button>
-  </mat-toolbar>
-  </p>
-  
-  <p>
-    <mat-toolbar color="primary">
-      <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
-        <mat-icon>menu</mat-icon>
-      </button>
-      <span>My App</span>
-      <span class="example-spacer"></span>
-      <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
-        <mat-icon>favorite</mat-icon>
-      </button>
-      <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
-        <mat-icon>share</mat-icon>
-      </button>
-    </mat-toolbar>
-  </p>
-  
-  <p>
-    <mat-toolbar color="primary">
-      <mat-toolbar-row>
-        <span>My App</span>
-        <span class="example-spacer"></span>
-        <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
-          <mat-icon>menu</mat-icon>
-        </button>
-      </mat-toolbar-row>
-  
-      <mat-toolbar-row>
-        <span>Second Line</span>
-        <span class="example-spacer"></span>
-        <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
-          <mat-icon>favorite</mat-icon>
-        </button>
-        <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
-          <mat-icon>share</mat-icon>
-        </button>
-      </mat-toolbar-row>
-    </mat-toolbar>
-  </p>
+<mat-toolbar>
+    <span routerLink="/">
+        My Application
+    </span>
+    <button mat-button [matMenuTriggerFor]="channelMenu">Channel</button>
+    <mat-menu #channelMenu="matMenu">
+      <a mat-menu-item routerLink="/channel-details">Details</a>
+    </mat-menu>
+    <button mat-button [matMenuTriggerFor]="commentMenu">Comments</button>
+    <mat-menu #commentMenu="matMenu">
+      <a mat-menu-item>View Comments</a>
+      <a mat-menu-item>Something With Comments</a>
+    </mat-menu>
+</mat-toolbar>
