@@ -1,6 +1,5 @@
 import { AuthConfig, OAuthService } from 'angular-oauth2-oidc';
 import { Injectable } from '@angular/core';
-import { JsonPipe } from '@angular/common';
 
 const oAuthConfig: AuthConfig = {
   issuer: 'https://accounts.google.com',

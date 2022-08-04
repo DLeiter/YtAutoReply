@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
-import { ChannelDetailsComponent } from './channel-details/channel-details.component';
-import { GoogleApiService } from './google-api.service';
+import { ChannelDetailsComponent } from './pages/channel-details/channel-details.component';
+import { GoogleApiService } from './services/google-api.service';
 
 @Component({
   selector: 'app-root',
