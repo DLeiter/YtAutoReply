@@ -1,6 +1,7 @@
 <div *ngIf="youtubeService.isLoggedIn()">
  It Works
 </div>
+<p>{{youtubeService.getAuthToken()}}</p>
 
 test
 <button mat-raised-button (click)="logout()">log out</button>

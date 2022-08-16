@@ -53,6 +53,10 @@ export class YouTubeApiService {
     });
   }
 
+  getAuthToken(){
+    return this.oAuthService.getAccessToken();
+  }
+
   isLoggedIn(): boolean {
     return this.oAuthService.hasValidAccessToken();
   }
