@@ -1,9 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { ChannelDetailsComponent } from './channel-details/channel-details.component';
+import { ChannelDetailsComponent } from './pages/channel-details/channel-details.component';
+import { HomeComponent } from './pages/home/home.component';
 
 const routes: Routes = [
-  {path: 'channel-details', component: ChannelDetailsComponent}
+  {path: '', component: HomeComponent},
+  {path: 'channel-details', component: ChannelDetailsComponent},
 ];
 
 @NgModule({
@@ -11,4 +13,7 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
-export const routingComponents = [ChannelDetailsComponent];
+export const routingComponents = [
+  HomeComponent, 
+  ChannelDetailsComponent
+];

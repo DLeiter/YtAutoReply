@@ -1,4 +1,9 @@
+import { AppRoutingModule, routingComponents } from './app-routing.module';
+import { NavbarComponent } from './shared/navbar/navbar.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { BrowserModule } from '@angular/platform-browser';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
@@ -10,11 +15,9 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { HttpClientModule } from '@angular/common/http';
 import { OAuthModule } from 'angular-oauth2-oidc';
 
+import { YouTubeApiService, UserInfo } from './services/youtube-auth.service';
 
-import { AppRoutingModule, routingComponents } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { NavbarComponent } from './navbar/navbar.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -22,21 +25,44 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     NavbarComponent,
     routingComponents,
   ],
+
   imports: [
-    BrowserModule,
-    AppRoutingModule,
+    BrowserAnimationsModule,
     MatToolbarModule,
     MatIconModule,
-    BrowserAnimationsModule,
     MatSliderModule,
     MatButtonModule,
     MatMenuModule,
     MatCommonModule,
     MatGridListModule,
     HttpClientModule,
+    CommonModule,
+    BrowserModule,
+    AppRoutingModule,
     OAuthModule.forRoot(),
   ],
-  providers: [],
+
+  providers: [YouTubeApiService],
+  
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+  
+  // userInfo?: UserInfo;
+
+  // constructor(private readonly youtubeApi: YouTubeApiService,
+  //   private readonly httpClient: HttpClientModule){
+  //     youtubeApi.userProfileSubject.subscribe(info => {
+  //       this.userInfo = info;
+  //     })
+  // }
+
+  // isLoggedIn(): boolean {
+  //   return this.youtubeApi.isLoggedIn();
+  // }
+
+  // logout() {
+  //   this.youtubeApi.logOut();
+  // }
+
+ }
