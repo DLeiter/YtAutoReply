@@ -29,7 +29,7 @@ export class ChannelDetailsComponent implements OnInit {
   }
 
   logout() {
-    this.youtubeService.logOut();
+    this.youtubeService.logout();
   }
 
   getData(){

@@ -61,7 +61,7 @@ export class YouTubeApiService {
     return this.oAuthService.hasValidAccessToken();
   }
 
-  logOut() {
+  logout() {
     this.oAuthService.logOut()
   }
 }
