@@ -49,7 +49,7 @@ export interface Item {
     snippet: Snippet;
 }
 
-export interface RootObject {
+export interface ChannelDetailsModel {
     kind: string;
     etag: string;
     pageInfo: PageInfo;

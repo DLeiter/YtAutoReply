@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { YouTubeApiService } from 'src/app/services/youtube-auth.service';
+import { YouTubeAuthService } from 'src/app/services/youtube-auth.service';
 
 @Component({
   selector: 'app-navbar',
@@ -10,7 +10,7 @@ export class NavbarComponent implements OnInit {
 
   youtubeService;
 
-  constructor(private _youtubeService: YouTubeApiService) { 
+  constructor(private _youtubeService: YouTubeAuthService) { 
     this.youtubeService = _youtubeService;
   }
 

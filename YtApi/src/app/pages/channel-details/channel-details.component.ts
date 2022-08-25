@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { UserInfo, YouTubeApiService } from 'src/app/services/youtube-auth.service';
+import { UserInfo, YouTubeAuthService } from 'src/app/services/youtube-auth.service';
 import { Subject } from 'rxjs';
 
 @Component({
@@ -13,9 +13,9 @@ export class ChannelDetailsComponent implements OnInit {
   private channelUrl = "https://youtube.googleapis.com/youtube/v3/channels?part=snippet&mine=true";
 
   // private channelDetails:Subject<UserInfo>;
-  public youtubeService: YouTubeApiService;
+  public youtubeService: YouTubeAuthService;
 
-  constructor(private _http: HttpClient, private _youtubeService: YouTubeApiService) { 
+  constructor(private _http: HttpClient, private _youtubeService: YouTubeAuthService) { 
     // this.channelDetails = this._youtubeService.userProfileSubject;
     this.youtubeService = this._youtubeService;
   }

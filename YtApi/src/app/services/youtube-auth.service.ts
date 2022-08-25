@@ -31,7 +31,7 @@ export interface UserInfo {
   providedIn: 'root'
 })
 
-export class YouTubeApiService {
+export class YouTubeAuthService {
 
   youtube = '';
   public userProfileSubject = new Subject<UserInfo>();
@@ -53,7 +53,7 @@ export class YouTubeApiService {
     });
   }
 
-  getAuthToken(){
+  getAuthToken(): string{
     return this.oAuthService.getAccessToken();
   }
 

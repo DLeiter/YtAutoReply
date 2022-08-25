@@ -1,6 +1,7 @@
-import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { YouTubeApiService } from 'src/app/services/youtube-auth.service';
+import { ChannelDetailsModel } from 'src/app/models/channel-details';
+import { YoutubeApiService } from 'src/app/services/youtube-api.service';
+import { ChannelDetailsComponent } from '../channel-details/channel-details.component';
 
 @Component({
   selector: 'app-home',
@@ -10,34 +11,27 @@ import { YouTubeApiService } from 'src/app/services/youtube-auth.service';
 
 export class HomeComponent implements OnInit {
 
-  public youtubeService: YouTubeApiService;
-  public http: HttpClient;
+  // public youtubeService: YouTubeAuthService;
+  // public http: HttpClient;
 
-  hostname = 'https://youtube.googleapis.com';
-  path = '/youtube/v3/channels?part=snippet&mine=true';
+  public channelDetails = <ChannelDetailsModel>{};
 
-  httpOptions = {};
+  youtubeService: YoutubeApiService;
 
-  constructor(private _youtubeService: YouTubeApiService,
-    private _http: HttpClient) { 
+  constructor(private _youtubeService: YoutubeApiService) { 
     this.youtubeService = this._youtubeService;
-    this.http = this._http;
   }
 
   ngOnInit(): void {
-    this.httpOptions = {
-    headers: new HttpHeaders({
-     'Content-Type': 'application/json',
-     'Authorization': 'Bearer ' + this.youtubeService.getAuthToken()
-    }),
-      withCredentials: false
-    }
+    // this.youtubeService.test();
+    this.youtubeService.setChannelDetails();
   }
 
-  getChannelDetails(){
-    this.http.get<any>(this.hostname + this.path, this.httpOptions).subscribe(data => {
-      console.log(data);
-    })
-  }
+  // setChannelDetails(){
+  //   this.http.get<ChannelDetailsModel>(this.hostname + this.path, this.httpOptions).subscribe(data => {
+  //     console.log(data);
+  //     this.channelDetails = data;
+  //   })
+  // }
 
 }

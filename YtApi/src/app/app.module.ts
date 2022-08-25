@@ -15,14 +15,17 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { HttpClientModule } from '@angular/common/http';
 import { OAuthModule } from 'angular-oauth2-oidc';
 
-import { YouTubeApiService, UserInfo } from './services/youtube-auth.service';
+import { YouTubeAuthService, UserInfo } from './services/youtube-auth.service';
 
 import { AppComponent } from './app.component';
+import { YoutubeApiService } from './services/youtube-api.service';
+import { ThumbnailCardComponent } from './components/thumbnail-card/thumbnail-card.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
+    ThumbnailCardComponent,
     routingComponents,
   ],
 
@@ -42,27 +45,12 @@ import { AppComponent } from './app.component';
     OAuthModule.forRoot(),
   ],
 
-  providers: [YouTubeApiService],
+  providers: [YouTubeAuthService,
+    YoutubeApiService
+  ],
   
   bootstrap: [AppComponent]
 })
 export class AppModule {
-  
-  // userInfo?: UserInfo;
-
-  // constructor(private readonly youtubeApi: YouTubeApiService,
-  //   private readonly httpClient: HttpClientModule){
-  //     youtubeApi.userProfileSubject.subscribe(info => {
-  //       this.userInfo = info;
-  //     })
-  // }
-
-  // isLoggedIn(): boolean {
-  //   return this.youtubeApi.isLoggedIn();
-  // }
-
-  // logout() {
-  //   this.youtubeApi.logOut();
-  // }
 
  }
