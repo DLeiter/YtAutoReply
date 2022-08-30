@@ -3,6 +3,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable, OnChanges } from '@angular/core';
 import { ChannelDetailsModel } from '../models/channel-details';
 import { YouTubeAuthService } from './youtube-auth.service';
+import { map, Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -20,8 +21,6 @@ export class YoutubeApiService {
   hostname = 'https://youtube.googleapis.com';
   channelPath = '/youtube/v3/channels?part=snippet&mine=true';
 
-  channelDetails = <ChannelDetailsModel>{};
-
   constructor(private _youtubeAuthService: YouTubeAuthService,
      private http: HttpClient) {
   }
@@ -30,10 +29,7 @@ export class YoutubeApiService {
     console.log("TEST");
   }
 
-  setChannelDetails(){
-    this.http.get<ChannelDetailsModel>(this.hostname + this.channelPath, this.httpOptions).subscribe(data => {
-      console.log(data);
-      this.channelDetails = data;
-    })
-  }
+  getChannelDetails(): Observable<ChannelDetailsModel>{
+    return this.http.get<ChannelDetailsModel>(this.hostname + this.channelPath, this.httpOptions)
+  };
 }

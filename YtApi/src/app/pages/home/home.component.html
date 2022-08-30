@@ -1,14 +1,15 @@
-<mat-grid-list cols="4" [rowHeight]="youtubeService.channelDetails.items[0].snippet.thumbnails.medium.height">
-    <mat-grid-tile class="bg-primary" colspan="3">                               
-        {{youtubeService.channelDetails.items[0].snippet.title}}
-    </mat-grid-tile>
-    <mat-grid-tile class="bg-danger" colspan="1">
-        <img [src]="youtubeService.channelDetails.items[0].snippet.thumbnails.medium.url" class="img-fluid"/>
-    </mat-grid-tile>
-    <mat-grid-tile class="bg-success" colspan="3">
-        {{youtubeService.channelDetails.items[0].snippet.description}}
-    </mat-grid-tile> -->
-    <mat-grid-tile class="bg-secondary" colspan="1">
-        {{youtubeService.channelDetails.items[0].snippet.thumbnails.medium.height}}
-    </mat-grid-tile>
-</mat-grid-list>
+<div class="container-fluid">
+    <div class="row">
+      <div class="col-9 bg-primary">
+        One of three columns
+      </div>
+      <div class="col">
+        <div class="row">
+            <app-thumbnail-card contentType="channel"></app-thumbnail-card>
+        </div>
+        <div class="row">
+            <app-thumbnail-card contentType="video"></app-thumbnail-card>
+        </div>
+      </div>
+    </div>
+  </div>

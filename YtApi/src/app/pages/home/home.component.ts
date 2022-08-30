@@ -11,9 +11,6 @@ import { ChannelDetailsComponent } from '../channel-details/channel-details.comp
 
 export class HomeComponent implements OnInit {
 
-  // public youtubeService: YouTubeAuthService;
-  // public http: HttpClient;
-
   public channelDetails = <ChannelDetailsModel>{};
 
   youtubeService: YoutubeApiService;
@@ -23,15 +20,6 @@ export class HomeComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    // this.youtubeService.test();
-    this.youtubeService.setChannelDetails();
   }
-
-  // setChannelDetails(){
-  //   this.http.get<ChannelDetailsModel>(this.hostname + this.path, this.httpOptions).subscribe(data => {
-  //     console.log(data);
-  //     this.channelDetails = data;
-  //   })
-  // }
 
 }

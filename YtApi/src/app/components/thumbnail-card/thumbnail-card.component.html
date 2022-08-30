@@ -1,1 +1,21 @@
-<p>thumbnail-card works!</p>
+<div class="card" *ngIf="snippet">
+    <img class="card-img-top" [src]="snippet.thumbnails.high.url" alt="Failed to load image">
+    <div class="card-body">
+        <h1 class="card-title">
+            {{snippet.title}}
+        </h1>
+        <p class="card-text">
+            {{snippet.description}}
+        </p>
+      <div class="row">
+          <div class="col-auto">
+            <a type="button" class="btn btn-primary" [href]="'https://www.youtube.com/c/'+snippet.customUrl">GO TO {{contentType}}</a>
+          </div>
+          <div class="col">
+            <p class="card-text d-flex justify-content-end">
+               @{{snippet.customUrl}}
+            </p>
+          </div>
+      </div>
+    </div>
+</div>
