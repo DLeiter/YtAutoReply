@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { YouTubeAuthService } from 'src/app/services/youtube-auth.service';
+import { YouTubeAuthService } from 'src/app/services/youtube-auth/youtube-auth.service';
 
 @Component({
   selector: 'app-navbar',

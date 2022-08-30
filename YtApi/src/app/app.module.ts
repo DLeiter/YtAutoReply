@@ -10,8 +10,8 @@ import { OAuthModule } from 'angular-oauth2-oidc';
 import { MaterialModule } from './material.module';
 
 
-import { YouTubeAuthService, UserInfo } from './services/youtube-auth.service';
-import { YoutubeApiService } from './services/youtube-api.service';
+import { YouTubeAuthService } from './services/youtube-auth/youtube-auth.service';
+import { YoutubeApiService } from './services/youtube-api/youtube-api.service';
 import { NavbarComponent } from './shared/navbar/navbar.component';
 import { ThumbnailCardComponent } from './components/thumbnail-card/thumbnail-card.component';
 

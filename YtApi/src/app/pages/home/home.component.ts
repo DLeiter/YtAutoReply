@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ChannelDetailsModel } from 'src/app/models/channel-details';
-import { YoutubeApiService } from 'src/app/services/youtube-api.service';
-import { ChannelDetailsComponent } from '../channel-details/channel-details.component';
+import { YoutubeApiService } from 'src/app/services/youtube-api/youtube-api.service';
 
 @Component({
   selector: 'app-home',

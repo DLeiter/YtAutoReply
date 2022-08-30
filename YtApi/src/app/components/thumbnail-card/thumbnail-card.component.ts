@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Snippet } from 'src/app/models/channel-details';
-import { YoutubeApiService } from 'src/app/services/youtube-api.service';
+import { YoutubeApiService } from 'src/app/services/youtube-api/youtube-api.service';
 
 @Component({
   selector: 'app-thumbnail-card',

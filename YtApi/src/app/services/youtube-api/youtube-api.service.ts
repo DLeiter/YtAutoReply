@@ -1,8 +1,8 @@
 import { OnInit } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable, OnChanges } from '@angular/core';
-import { ChannelDetailsModel } from '../models/channel-details';
-import { YouTubeAuthService } from './youtube-auth.service';
+import { ChannelDetailsModel } from '../../models/channel-details';
+import { YouTubeAuthService } from '../youtube-auth/youtube-auth.service';
 import { map, Observable } from 'rxjs';
 
 @Injectable({
