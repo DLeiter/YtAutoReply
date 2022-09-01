@@ -26,7 +26,10 @@ export class ThumbnailCardComponent implements OnInit {
       });
     }
     else if(this.contentType == "VIDEO"){
-      // this.cardContent = "VIDEO DESCRIPTION";
+      this.youtubeService.getVideoDetails()
+      .subscribe(data => {
+        console.log(data);
+      });
     }
   }
 
